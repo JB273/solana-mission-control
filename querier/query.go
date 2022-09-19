@@ -15,7 +15,7 @@ import (
 func GetAccountBalFromDB(cfg *config.Config) (string, error) {
 	var result types.DBRes
 	var bal string
-	response, err := http.Get(fmt.Sprintf("%s/api/v1/query?query=solana_account_balance", cfg.Prometheus.PrometheusAddress))
+	response, err := http.Get(fmt.Sprintf("%s/api/v1/query?query=solana_identity_account_balance", cfg.Prometheus.PrometheusAddress))
 	if err != nil {
 		log.Printf("Error while querying account bal from db: %v", err)
 		return bal, err
